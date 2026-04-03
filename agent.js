@@ -19,7 +19,7 @@ const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
 // ─── Shared fetch helper ──────────────────────────────────────────────────────
 
-async function callClaude({ system, user, tools = [], maxTokens = 2000 }) {
+async function callClaude({ system, user, tools = [], maxTokens = 2000, model = "claude-sonnet-4-20250514" }) {
   const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -28,7 +28,7 @@ async function callClaude({ system, user, tools = [], maxTokens = 2000 }) {
       "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
-      model: "claude-sonnet-4-20250514",
+      model,
       max_tokens: maxTokens,
       system,
       tools,
@@ -97,6 +97,7 @@ Return only the JSON object. No other text.`;
     user,
     tools: [{ type: "web_search_20250305", name: "web_search" }],
     maxTokens: 3000,
+    model: "claude-haiku-4-5-20251001",
   });
 
   const clean = raw.replace(/```json|```/g, "").trim();
@@ -156,6 +157,7 @@ Write the daily Wielermanager briefing with these sections:
     user,
     tools: [],
     maxTokens: 3000,
+    model: "claude-sonnet-4-20250514",
   });
 
   console.log("Agent 2 done.");
