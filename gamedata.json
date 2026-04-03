@@ -1,0 +1,4895 @@
+{
+  "season": "Sporza Wielermanager Voorjaar Mannen 2026",
+  "budget": {
+    "total": 100,
+    "unit": "miljoen",
+    "squadSize": 20,
+    "playingXI": 12,
+    "bench": 8
+  },
+  "transfers": {
+    "freeTransfers": 3,
+    "costPerExtraTransfer": "cumulative: 4th = +1M, 5th = +2M, 6th = +3M, etc.",
+    "notes": "Unlimited transfers allowed. Budget must balance exactly (price in = price out). Transfers within a window are cumulative — burning multiple transfers for marginal gains is poor strategy."
+  },
+  "kopman": {
+    "description": "One rider designated as captain per race. Kopman earns BONUS points on top of normal race points based on finishing position.",
+    "bonusPoints": {
+      "1st": 30,
+      "2nd": 25,
+      "3rd": 20,
+      "4th": 15,
+      "5th": 10,
+      "6th": 5
+    },
+    "notes": "Kopman bonus is IN ADDITION to normal points. Only positions 1-6 earn kopman bonus. Choose kopman per race — pivotal decision that separates good managers from great ones."
+  },
+  "scoring": {
+    "notes": "Top 30 finishers score points (up to position 30). Points vary by race category.",
+    "categories": {
+      "Monument": {
+        "races": [
+          "Milaan-San Remo",
+          "Ronde van Vlaanderen",
+          "Paris-Roubaix",
+          "Amstel Gold Race",
+          "Luik-Bastenaken-Luik"
+        ],
+        "points": {
+          "1st": 125,
+          "2nd": 90,
+          "3rd": 75,
+          "4th": 65,
+          "5th": 55,
+          "6th": 50,
+          "7th": 45,
+          "8th": 40,
+          "9th": 37,
+          "10th": 34,
+          "11th": 31,
+          "12th": 28,
+          "13th": 26,
+          "14th": 25,
+          "15th": 22,
+          "16th": 20,
+          "17th": 18,
+          "18th": 16,
+          "19th": 14,
+          "20th": 12,
+          "21-25th": "~5-10",
+          "26-30th": "1-5"
+        }
+      },
+      "WorldTour": {
+        "races": [
+          "Omloop Het Nieuwsblad",
+          "Strade Bianche",
+          "Tirreno-Adriatico stages",
+          "E3 Saxo Bank Classic",
+          "Gent-Wevelgem",
+          "Dwars door Vlaanderen",
+          "Flèche Wallonne"
+        ],
+        "win": 100,
+        "notes": "Points scale down from 100 for win"
+      },
+      "NonWorldTour": {
+        "races": [
+          "Kuurne-Brussel-Kuurne",
+          "Nokere Koerse",
+          "Le Samyn",
+          "Handzame Classic",
+          "Bredene Koksijde Classic",
+          "Scheldeprijs"
+        ],
+        "win": 80,
+        "notes": "Points scale down from 80 for win. Lower positions still earn meaningful points due to 2026 rule change."
+      }
+    }
+  },
+  "raceCalendar": [
+    {
+      "name": "Omloop Het Nieuwsblad",
+      "date": "28 February 2026",
+      "type": "WorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Kuurne-Brussel-Kuurne",
+      "date": "1 March 2026",
+      "type": "NonWorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Strade Bianche",
+      "date": "7 March 2026",
+      "type": "WorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Le Samyn",
+      "date": "5 March 2026",
+      "type": "NonWorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Nokere Koerse",
+      "date": "18 March 2026",
+      "type": "NonWorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Bredene Koksijde Classic",
+      "date": "20 March 2026",
+      "type": "NonWorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Milaan-San Remo",
+      "date": "21 March 2026",
+      "type": "Monument",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Handzame Classic",
+      "date": "25 March 2026",
+      "type": "NonWorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "E3 Saxo Bank Classic",
+      "date": "27 March 2026",
+      "type": "WorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Gent-Wevelgem",
+      "date": "29 March 2026",
+      "type": "WorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Dwars door Vlaanderen",
+      "date": "1 April 2026",
+      "type": "WorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Ronde van Vlaanderen",
+      "date": "5 April 2026",
+      "type": "Monument",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Scheldeprijs",
+      "date": "8 April 2026",
+      "type": "NonWorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Paris-Roubaix",
+      "date": "12 April 2026",
+      "type": "Monument",
+      "phase": "cobbled"
+    },
+    {
+      "name": "Amstel Gold Race",
+      "date": "19 April 2026",
+      "type": "Monument",
+      "phase": "ardennes"
+    },
+    {
+      "name": "Fleche Wallonne",
+      "date": "22 April 2026",
+      "type": "WorldTour",
+      "phase": "ardennes"
+    },
+    {
+      "name": "Luik-Bastenaken-Luik",
+      "date": "26 April 2026",
+      "type": "Monument",
+      "phase": "ardennes"
+    }
+  ],
+  "strategy": {
+    "phases": {
+      "cobbled": "Omloop through Paris-Roubaix. Prioritise cobbled specialists: MVDP, Philipsen, Politt, Dewulf, Mohoric, Brennan. MVDP is primary kopman.",
+      "ardennes": "Amstel, Fleche, Liege. Pivot to climbers/puncheurs: Pogacar, Evenepoel, Hermans, Aranburu. Kopman switches to Pogacar or Evenepoel."
+    },
+    "transferWindow": "Main pivot after Paris-Roubaix (12 April). Release cobbled fillers, bring in Ardennes specialists.",
+    "fillerRiders": "Cheap riders (price 2-3) used to balance transfer budgets. Always bench them. Release at next window.",
+    "kopmanPrinciple": "Never waste kopman on a rider who won't finish top 6. Monument days with MVDP or Pogacar starting = automatic kopman choice."
+  },
+  "allRiders": [
+    {
+      "name": "Tadej Pogacar",
+      "price": 14,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Mathieu van der Poel",
+      "price": 14,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Remco Evenepoel",
+      "price": 12,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Wout van Aert",
+      "price": 11,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Mads Pedersen",
+      "price": 10,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Jasper Philipsen",
+      "price": 9,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Tim Merlier",
+      "price": 8,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Tom Pidcock",
+      "price": 8,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Jonas Vingegaard",
+      "price": 8,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Juan Ayuso",
+      "price": 7,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Isaac Del Toro",
+      "price": 7,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Filippo Ganna",
+      "price": 7,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Ben Healy",
+      "price": 7,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Paul Magnier",
+      "price": 7,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Jonathan Milan",
+      "price": 7,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Primož Roglic",
+      "price": 7,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Mattias Skjelmose",
+      "price": 7,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "João Almeida",
+      "price": 6,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Tiesj Benoot",
+      "price": 6,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Matthew Brennan",
+      "price": 6,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Richard Carapaz",
+      "price": 6,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Arnaud De Lie",
+      "price": 6,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Kaden Groves",
+      "price": 6,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Matteo Jorgenson",
+      "price": 6,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Olav Kooij",
+      "price": 6,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Florian Lipowitz",
+      "price": 6,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Michael Matthews",
+      "price": 6,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Thibau Nys",
+      "price": 6,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Neilson Powless",
+      "price": 6,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Jasper Stuyven",
+      "price": 6,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Mathias Vacek",
+      "price": 6,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Maxim Van Gils",
+      "price": 6,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Tim Wellens",
+      "price": 6,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Santiago Buitrago",
+      "price": 5,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Jan Christen",
+      "price": 5,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Giulio Ciccone",
+      "price": 5,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Benoît Cosnefroy",
+      "price": 5,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Tibor Del Grosso",
+      "price": 5,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Milan Fretin",
+      "price": 5,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Felix Gall",
+      "price": 5,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Derek Gee",
+      "price": 5,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Biniam Girmay",
+      "price": 5,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Romain Grégoire",
+      "price": 5,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Jai Hindley",
+      "price": 5,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Marc Hirschi",
+      "price": 5,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Hugo Hofstetter",
+      "price": 5,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Tobias Johannessen",
+      "price": 5,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Stefan Küng",
+      "price": 5,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Sepp Kuss",
+      "price": 5,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Christophe Laporte",
+      "price": 5,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Lenny Martinez",
+      "price": 5,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Jordi Meeus",
+      "price": 5,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Matej Mohoric",
+      "price": 5,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Jhonatan Narváez",
+      "price": 5,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Ben O'Connor",
+      "price": 5,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Oscar Onley",
+      "price": 5,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Giulio Pellizzari",
+      "price": 5,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Christian Scaroni",
+      "price": 5,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Paul Seixas",
+      "price": 5,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Magnus Sheffield",
+      "price": 5,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Michael Storer",
+      "price": 5,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Antonio Tiberi",
+      "price": 5,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Matteo Trentin",
+      "price": 5,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Cian Uijtdebroeks",
+      "price": 5,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Lennert Van Eetvelt",
+      "price": 5,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Kévin Vauquelin",
+      "price": 5,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Florian Vermeersch",
+      "price": 5,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Jay Vine",
+      "price": 5,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Søren Wærenskjold",
+      "price": 5,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Adam Yates",
+      "price": 5,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Jonas Abrahamsen",
+      "price": 4,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Pascal Ackermann",
+      "price": 4,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Julian Alaphilippe",
+      "price": 4,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Alex Aranburu",
+      "price": 4,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Thymen Arensman",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Kasper Asgreen",
+      "price": 4,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Lewis Askey",
+      "price": 4,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Orluis Aular",
+      "price": 4,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Davide Ballerini",
+      "price": 4,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Louis Barré",
+      "price": 4,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Phil Bauhaus",
+      "price": 4,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Sam Bennett",
+      "price": 4,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Jenno Berckmoes",
+      "price": 4,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Egan Bernal",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Alberto Bettiol",
+      "price": 4,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Pello Bilbao",
+      "price": 4,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Pavel Bittner",
+      "price": 4,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Cees Bol",
+      "price": 4,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Victor Campenaerts",
+      "price": 4,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Damiano Caruso",
+      "price": 4,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Pablo Castrillo",
+      "price": 4,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Bryan Coquard",
+      "price": 4,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Magnus Cort",
+      "price": 4,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Alberto Dainese",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Dries De Bondt",
+      "price": 4,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Arvid de Kleijn",
+      "price": 4,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Eddie Dunbar",
+      "price": 4,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Nils Eekhoff",
+      "price": 4,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Lorenzo Fortunato",
+      "price": 4,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Iván García Cortina",
+      "price": 4,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "David Gaudu",
+      "price": 4,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Fernando Gaviria",
+      "price": 4,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Tao Geoghegan Hart",
+      "price": 4,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Dorian Godon",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Dylan Groenewegen",
+      "price": 4,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Chris Harper",
+      "price": 4,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Ethan Hayter",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Quinten Hermans",
+      "price": 4,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Fabio Jakobsen",
+      "price": 4,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Emilien Jeannière",
+      "price": 4,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Jordan Jegat",
+      "price": 4,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Max Kanter",
+      "price": 4,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Søren Kragh",
+      "price": 4,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Lukáš Kubiš",
+      "price": 4,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Michal Kwiatkowski",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Luke Lamperti",
+      "price": 4,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Mikel Landa",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Paul Lapeira",
+      "price": 4,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Axel Laurance",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Andreas Leknessund",
+      "price": 4,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Tobias Lund Andresen",
+      "price": 4,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Alexey Lutsenko",
+      "price": 4,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Valentin Madouas",
+      "price": 4,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Arne Marit",
+      "price": 4,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Guillaume Martin",
+      "price": 4,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Daniel Felipe Martínez",
+      "price": 4,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Enric Mas",
+      "price": 4,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Brandon McNulty",
+      "price": 4,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Milan Menten",
+      "price": 4,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Madis Mihkels",
+      "price": 4,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Juan Sebastián Molano",
+      "price": 4,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "António Morgado",
+      "price": 4,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Matteo Moschetti",
+      "price": 4,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Luca Mozzato",
+      "price": 4,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Aurélien Paret-Peintre",
+      "price": 4,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Valentin Paret-Peintre",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Paul Penhoët",
+      "price": 4,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Laurence Pithie",
+      "price": 4,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Lucas Plapp",
+      "price": 4,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Rick Pluimers",
+      "price": 4,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Nils Politt",
+      "price": 4,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Max Poole",
+      "price": 4,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Laurenz Rex",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Matthew Riccitello",
+      "price": 4,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Carlos Rodríguez",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Iván Romeo",
+      "price": 4,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Einer Rubio",
+      "price": 4,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Max Schachmann",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Mauro Schmid",
+      "price": 4,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Alec Segaert",
+      "price": 4,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Quinn Simmons",
+      "price": 4,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Pavel Sivakov",
+      "price": 4,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Toms Skujinš",
+      "price": 4,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Marc Soler",
+      "price": 4,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Corbin Strong",
+      "price": 4,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Joshua Tarling",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Mike Teunissen",
+      "price": 4,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Dylan Teuns",
+      "price": 4,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Gerben Thijssen",
+      "price": 4,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Rasmus Tiller",
+      "price": 4,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Torstein Træen",
+      "price": 4,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Jan Tratnik",
+      "price": 4,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Ben Tulett",
+      "price": 4,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Anthony Turgis",
+      "price": 4,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Ben Turner",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Attila Valter",
+      "price": 4,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Dylan van Baarle",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Marijn van den Berg",
+      "price": 4,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Danny van Poppel",
+      "price": 4,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Mauri Vansevenant",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Casper van Uden",
+      "price": 4,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Ilan Van Wilder",
+      "price": 4,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Simone Velasco",
+      "price": 4,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Gianni Vermeersch",
+      "price": 4,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Ethan Vernon",
+      "price": 4,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Aleksandr Vlasov",
+      "price": 4,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Sam Watson",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Sam Welsford",
+      "price": 4,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Jarno Widar",
+      "price": 4,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Fred Wright",
+      "price": 4,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Axel Zingle",
+      "price": 4,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Roger Adrià",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Toon Aerts",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Edoardo Affini",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Mattia Agostinacchio",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Vincenzo Albanese",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Piet Allegaert",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Stanislaw Aniolkowski",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Bruno Armirail",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Nikias Arndt",
+      "price": 3,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Igor Arrieta",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Huub Artz",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Andrea Bagioli",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Fernando Barceló",
+      "price": 3,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Warren Barguil",
+      "price": 3,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Filippo Baroncini",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Jon Barrenetxea",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Samuele Battistella",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Alex Baudin",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Niklas Behrens",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Clément Berthet",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Cédric Beullens",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Jenthe Biermans",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Léo Bisiaux",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Stefan Bissegger",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Mikkel Bjerg",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Joseph Blackmore",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Erlend Blikra",
+      "price": 3,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Koen Bouwman",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Vito Braet",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Marco Brenner",
+      "price": 3,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Alexys Brunel",
+      "price": 3,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Emanuel Buchmann",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Mathieu Burgaudeau",
+      "price": 3,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Francesco Busatto",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Carlos Canal",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Amaury Capiot",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Mattia Cattaneo",
+      "price": 3,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Rémi Cavagna",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Alexander Cepeda",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Jefferson Alveiro Cepeda",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Clément Champoussin",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Fabio Christen",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Filippo Conca",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Simone Consonni",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Ewen Costiou",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Alessandro Covi",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Tom Crabbe",
+      "price": 3,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Steff Cras",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Ramses Debruyne",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Aimé De Gendt",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "John Degenkolb",
+      "price": 3,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Simon Dehairs",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "David Dekker",
+      "price": 3,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "David De La Cruz",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Alexandre Delettre",
+      "price": 3,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Nico Denz",
+      "price": 3,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Laurens De Plus",
+      "price": 3,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Steffen De Schuyteneer",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Stan Dewulf",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Silvan Dillier",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Paul Double",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Sandy Dujardin",
+      "price": 3,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Timothy Dupont",
+      "price": 3,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Luke Durbridge",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Pascal Eenkhoorn",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Odd Christian Eiking",
+      "price": 3,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Itamar Einhorn",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Felix Engelhardt",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Haimar Etxeberria",
+      "price": 3,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Afonso Eulálio",
+      "price": 3,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Yevgeniy Fedorov",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Filippo Fiorelli",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Finn Fisher-Black",
+      "price": 3,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Anders Foldager",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Davide Formolo",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Tobias Foss",
+      "price": 3,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Stian Fredheim",
+      "price": 3,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Marco Frigo",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Frederik Frison",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Raul Garcia Pierna",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Gianmarco Garofoli",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Pierre Gautherat",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Robbe Ghys",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Matevž Govekar",
+      "price": 3,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Felix Großschartner",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Thibaud Gruel",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Tord Gudmestad",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Per Strand Hagenes",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Jack Haig",
+      "price": 3,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Marco Haller",
+      "price": 3,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Jesús Herrada",
+      "price": 3,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Rune Herregodts",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Sergio Higuita",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Jan Hirt",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Noah Hobbs",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Markus Hoelgaard",
+      "price": 3,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Mikkel Honoré",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Daan Hoole",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Damien Howson",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Ion Izagirre",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Anders Johannessen",
+      "price": 3,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Bob Jungels",
+      "price": 3,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Lennard Kämna",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Alexander Kamp",
+      "price": 3,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Wilco Kelderman",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Timo Kielich",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Alex Kirsch",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Oliver Knight",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Oded Kogut",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Patrick Konrad",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Jelte Krijnsen",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Andreas Kron",
+      "price": 3,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Steven Kruijswijk",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Johannes Kulset",
+      "price": 3,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Jordan Labrosse",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Vegard Stake Laengen",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Victor Lafay",
+      "price": 3,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Yves Lampaert",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Victor Langellotti",
+      "price": 3,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Niklas Larsen",
+      "price": 3,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Junior Lecerf",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Iúri Leitão",
+      "price": 3,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Bart Lemmen",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Emils Liepinš",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Arjen Livyns",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Giovanni Lonardi",
+      "price": 3,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Lander Loockx",
+      "price": 3,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Harold López",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Juan Pedro López",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Matis Louvel",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Matteo Malucelli",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Lorrenzo Manzin",
+      "price": 3,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Martin Marcellusi",
+      "price": 3,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Marius Mayrhofer",
+      "price": 3,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Xandro Meurisse",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Luka Mezgec",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Lorenzo Milesi",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Pau Miquel",
+      "price": 3,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Rudy Molard",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Bauke Mollema",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Oliver Naesen",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Krists Neilands",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Lukas Nerurkar",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Jørgen Nordhagen",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Domen Novak",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Stefano Oldani",
+      "price": 3,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Ivo Oliveira",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Rui Oliveira",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Jakob Omrzel",
+      "price": 3,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Quentin Pacher",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Hugo Page",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Casper Pedersen",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Rasmus Pedersen",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Albert Philipsen",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Riley Pickrell",
+      "price": 3,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Davide Piganzoli",
+      "price": 3,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Edward Planckaert",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Jensen Plowright",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Wout Poels",
+      "price": 3,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Eduard Prades",
+      "price": 3,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Nicolas Prodhomme",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Sean Quinn",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Nairo Quintana",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Andrea Raccagni",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Dušan Rajovic",
+      "price": 3,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Senna Remijn",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Alexis Renard",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Jonas Rickaert",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Oscar Riesebeek",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Brandon Rivera",
+      "price": 3,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Rémy Rochas",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Cristián Rodríguez",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Alessandro Romele",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Javier Romo",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Mathys Rondel",
+      "price": 3,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Lorenzo Rota",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Clément Russo",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Jonas Rutsch",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Archie Ryan",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Pelayo Sánchez",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Nicholas Schultz",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Florian Sénéchal",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Gonzalo Serrano",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Riley Sheehan",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Guillermo Thomas Silva",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Matteo Sobrero",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Jakob Söderqvist",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Iván Sosa",
+      "price": 3,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Robert Stannard",
+      "price": 3,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Johannes Staune-Mittet",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Georg Steinhauser",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Jake Stewart",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Florian Stork",
+      "price": 3,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Embret Svestad-Bårdseng",
+      "price": 3,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Harry Sweeny",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Connor Swift",
+      "price": 3,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Gleb Syritsa",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Lionel Taminiaux",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Harold Tejada",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Natnael Tesfatsion",
+      "price": 3,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Jason Tesson",
+      "price": 3,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Tim Torn Teutenberg",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Edward Theuns",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Benjamin Thomas",
+      "price": 3,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Rory Townsend",
+      "price": 3,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Bastien Tronchon",
+      "price": 3,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Henri Uhlig",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Diego Ulissi",
+      "price": 3,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Milan Vader",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Michael Valgren",
+      "price": 3,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Tom Van Asbroeck",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Luca Van Boven",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Fabio Van den Bossche",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Frank van den Broek",
+      "price": 3,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Taco van der Hoorn",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Mick van Dijke",
+      "price": 3,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Tim van Dijke",
+      "price": 3,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Dries Van Gestel",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Bert Van Lerberghe",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Vlad Van Mechelen",
+      "price": 3,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Brent Van Moer",
+      "price": 3,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Andrea Vendrame",
+      "price": 3,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Clément Venturini",
+      "price": 3,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Kevin Vermaerke",
+      "price": 3,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Carlos Verona",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Emiel Verstrynge",
+      "price": 3,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Max Walscheid",
+      "price": 3,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Frederik Wandahl",
+      "price": 3,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Stephen Williams",
+      "price": 3,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Edoardo Zambanini",
+      "price": 3,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Filippo Zana",
+      "price": 3,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Maikel Zijlaard",
+      "price": 3,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Georg Zimmermann",
+      "price": 3,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Jon Agirre",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Yago Aguirre",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Giovanni Aleotti",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Clément Alleno",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Nicolás Alustiza",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Rodrigo Álvarez",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Matteo Ambrosini",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Mario Aparicio",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Stijn Appel",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Yukiya Arashiro",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Jorge Arcas",
+      "price": 2,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Franklin Archibold",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Hamish Armitt",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Julen Arriolabengoa",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Ronan Augé",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "AJ August",
+      "price": 2,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Ibai Azanza",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Hugo Aznar",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Unai Aznar",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Xabier Azparren",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Matteo Badilatti",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Christian Bagatin",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Davide Bais",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Mattia Bais",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Abel Balderstone",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Maurice Ballerstedt",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Alexandre Balmer",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Will Barta",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Cyril Barthe",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Ayco Bastiaens",
+      "price": 2,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Siebe Bauwens",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Sjoerd Bax",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Tobias Bayer",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Hamish Beadle",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Dario Belletta",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Lennert Belmans",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Markel Beloki",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Adrian Benito",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "George Bennett",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Xabier Berasategi",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Julien Bernard",
+      "price": 2,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Urko Berrade",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Sebastian Berwick",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Gabriele Bessega",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Tommaso Bessega",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Carl-Frederik Bévort",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Frits Biesterbos",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Mikel Bizkarra",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Joren Bloem",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "William Blume Levy",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Sam Boardman",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Adrien Boichis",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Guillaume Boivin",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Thomas Bonnet",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Kamiel Bonneu",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Alessandro Borgo",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Joan Bou",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Geoffrey Bouchard",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Georgios Bouglas",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Rayan Boulahoite",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Lewis Bower",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Diego Bracalente",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Sam Brand",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Clément Braz Afonso",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Nicolas Breuillard",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Marc Brustenga",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Alberto Bruttomesso",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Marcin Budzinski",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Nicolò Buratti",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Josh Burnett",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Aidan Buttigieg",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Sven Erik Bystrøm",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Walter Calzoni",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Marcel Camprubí",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Robin Carpenter",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Simon Carr",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Pablo Carrascosa",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Jan Castellón",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Ezra Caudell",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Daniel Cavia",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Filippo Cettolin",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Oscar Chamberlain",
+      "price": 2,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Anthon Charmig",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Camille Charret",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Cesare Chesini",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Sean Christian",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Cedrik Christophersen",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Sergio Chumil",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Edoardo Cipollini",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Iván Cobo",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Jacopo Colladon",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Luca Colnaghi",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Nicola Conci",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Lorenzo Conforti",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Valerio Conti",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Michiel Coppens",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Dillon Corkery",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Gorka Corres",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Pier-André Côté",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Luca Covili",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Lars Craps",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Ludovico Crescioli",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Luca Cretti",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Fabrizio German Crozzolo",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Edward Cruz",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Simon Dalby",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Sergi Darder",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Lucas Daugé",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Florian Dauphin",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Nicolas Debeaumarché",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Stefan de Bod",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Jasper De Buyst",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Maxime Decomble",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Quinten De Graeve",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Timo de Jong",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Hugo De La Calle",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Joris Delbove",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Brem Deman",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Tuur Dens",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Sander De Pestel",
+      "price": 2,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Dries De Pooter",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Davide De Pretto",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Hartthijs de Vries",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Lindsay De Vylder",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Siebe Deweirdt",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Robbe Dhondt",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Jose Manuel Diaz",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Alex Díaz",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Márton Dina",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Matt Dinham",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Bram Dissel",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Aaron Dockx",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Robert Donaldson",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Tom Donnenwirth",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Mark Donovan",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Robin Donzé",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Fabien Doubey",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Owain Doull",
+      "price": 2,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Jarrad Drizners",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Ðorde Ðuric",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Fredrik Dversnes",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Tijmen Eising",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Iñigo Elosegui",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Jacob Eriksson",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Roman Ermakov",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Žak Eržen",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Matteo Fabbro",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Eric Fagúndez",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Adrian Fajardo",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Alessandro Fancellu",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "José Luis Faura",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Alexy Faure Prost",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Karsten Feldmann",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Samuel Fernández",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Sinuhé Fernández",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Santiago Ferraro",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Valentin Ferron",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Tilen Finkšt",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Samuel Flórez",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Sean Flynn",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Titouan Fontaine",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Eivind Broholt Fougner",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Matthew Fox",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Robin Froidevaux",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Thomas Gachignard",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Mattia Gaffuri",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Patrick Gamper",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Ander Ganzabal",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Pablo García",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Carlos Garcia Pierna",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Aaron Gate",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Michele Gazzoli",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Jonas Geens",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Ferre Geeraerts",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Gil Gelders",
+      "price": 2,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Owen Geleijn",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Kévin Geniets",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Lorenzo Germani",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Amanuel Ghebreigzabhier",
+      "price": 2,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Joshua Giddings",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Brady Gilmore",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Nil Gimeno",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Dario Giuliano",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Gal Glivar",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Thomas Gloag",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Michael Gogl",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Germán Gómez",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Iker Gómez",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Lev Gonov",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "David González",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Roberto González",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Tijmen Graat",
+      "price": 2,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Kamil Gradek",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Ben Granger",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Fabien Grellier",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Sébastien Grignard",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Matys Grisel",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Filip Gruszczynski",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Simone Gualdi",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Jaume Guardeño",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Thibault Guernalec",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Jorge Gutiérrez",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Alexander Hajek",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Chris Hamilton",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Lucas Hamilton",
+      "price": 2,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Jelle Harteel",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Alan Hatherly",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Kieran Haug",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Leo Hayter",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Kim Heiduk",
+      "price": 2,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Asbjørn Hellemose",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Paul Hennequin",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Martín Herreño",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Emil Herzog",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Michel Heßmann",
+      "price": 2,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Jules Hesters",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Ådne Holter",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Emmanuel Houcou",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Hugo Houle",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Axel Huens",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Menno Huising",
+      "price": 2,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Nolan Huysmans",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Jonas Hvideberg",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Alessandro Iacchi",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Javier Ibáñez",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Storm Ingebrigtsen",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Unai Iribar",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Declan Irvine",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Xabier Isasa",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Noa Isidore",
+      "price": 2,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Clément Izquierdo",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Johan Jacobs",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Yaël Joalland",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Jelle Johannink",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Julius Johansen",
+      "price": 2,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Alan Jousseaume",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Txomin Juaristi",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Christopher Juul-Jensen",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Florian Kajamini",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Petr Kelemen",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Joshua Kench",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Rainer Kepplinger",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Jochem Kerckhaert",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Cole Kessler",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Jonah Killy",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Arthur Kluckers",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Vojtech Kmínek",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "James Knox",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Mathieu Kockelmann",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Bjorn Koerdt",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Sebastian Kolze Changizi",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Matyáš Kopecký",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Tomáš Kopecký",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Tomoya Koyama",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Jesse Kramer",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Max Kroonen",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Merhawi Kudus",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Anton Kuzmin",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Michiel Lambrecht",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Milan Lanhove",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Ellande Larronde",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Harry Lasker",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Jonathan Lastra",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Yorben Lauryssen",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Mathis Le Berre",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Gijs Leemreize",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Fabrice Lefevre",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Olivier Le Gac",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Michael Leonard",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Samuel Leroux",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Theo Lévêque",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Antoine L'Hôte",
+      "price": 2,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Fabian Lienhard",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Sakarias Løland",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Ian López",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Jordi López",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Joseba López",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Juan José López",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Pablo Lospitao",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "David Lozano",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Jan Maas",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Marijn Maas",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "César Macías",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Filip Maciejuk",
+      "price": 2,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Alastair MacKellar",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Donovan Mackie",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Mirco Maestri",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Filippo Magli",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Adrien Maire",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Sam Maisonobe",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Bálint Makrai",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Kamil Malecki",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Marco Manenti",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Nicola Marcerou",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Gianni Marchand",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Elias Maris",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Niklas Märkl",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Tim Marsman",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Pau Martí",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Gotzon Martín",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "José María Martín",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Alessio Martinelli",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Guillermo Martínez",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Lorenzo Masciarelli",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Fausto Masnada",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Pietro Mattio",
+      "price": 2,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Alexandre Mayer",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Bailey McDonald",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Brody McDonald",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Scott McGill",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Hamish McKenzie",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Jamie Meehan",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Felix Meo",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Sergio Meris",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Andréa Mifsud",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Fran Miholjevic",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Aivaras Mikutis",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Matteo Milan",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Iker Mintegi",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Alex Molenaar",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Sylvain Moniquet",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Andrea Montagner",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Zeno Moonen",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Manlio Moro",
+      "price": 2,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Jacopo Mosca",
+      "price": 2,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Gianni Moscon",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Wessel Mouris",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Gregor Mühlberger",
+      "price": 2,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Ryan Mullen",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Anton Muller",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Tobias Müller",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Henok Mulubrhan",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Francisco Muñoz",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Byron Munton",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Jokin Murguialday",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Tim Naberman",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Joost Nat",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Tommaso Nencini",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Lorenzo Nespoli",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Joel Nicolau",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Mathias Norsgaard",
+      "price": 2,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Pavel Novák",
+      "price": 2,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Kelland O'Brien",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Ander Okamika",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Nélson Oliveira",
+      "price": 2,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Ben Oliver",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Sam Oomen",
+      "price": 2,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Robin Orins",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Felix Ørn-Kristoff",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Jakub Otruba",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Paul Ourselin",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Peter Øxenberg",
+      "price": 2,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Mathijs Paasschens",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Enzo Paleni",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Luca Paletti",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Nicolò Parisini",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "José Félix Parra",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Oliver Peace",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Barnabás Peák",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Henrik Pedersen",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Manuel Peñalver",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Francisco Peñuela",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "César Pérez",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Adrià Pericas",
+      "price": 2,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Andrea Peron",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Davide Persico",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Diego Pescador",
+      "price": 2,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Thomas Pesenti",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Jannis Peter",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Finlay Pickering",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Joe Pidcock",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Andrea Pietrobon",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Alessandro Pinarello",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Mattia Pinazzi",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Andrea Piras",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Antonio Polga",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Umberto Poli",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Gianluca Pollefliet",
+      "price": 2,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Rudy Porter",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Louis Marie Posnic",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Johan Price-Pejtersen",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Lorenzo Quartucci",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Gabriele Raccagni",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Darren Rafferty",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Nadav Raisberg",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Unai Ramos",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Martijn Rasenberg",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Matteo Regnanti",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Pepijn Reinderink",
+      "price": 2,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Elmar Reinders",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Henri-François Renard-Haquin",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Erik Resell",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Valentin Retailleau",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Mikel Retegi",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Tim Rex",
+      "price": 2,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Martín Rey",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Filippo Ridolfo",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Ludovic Robeet",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Óscar Rodríguez",
+      "price": 2,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Vicente Rojas",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Brieuc Rolland",
+      "price": 2,
+      "team": "Groupama - FDJ United"
+    },
+    {
+      "name": "Iben Rommelaere",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Timo Roosen",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Sergei Rostovtsev",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Louis Rouland",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Ibon Ruiz",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Jambaljamts Sainbayar",
+      "price": 2,
+      "team": "Burgos Burpellet BH "
+    },
+    {
+      "name": "Sergio Samitier",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Carlos Samudio",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Arne Santy",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Colin Savioz",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Hugo Scala Jr.",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Anton Schiffer",
+      "price": 2,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Marco Schrettl",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Matthias Schwarzbacher",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Callum Scotson",
+      "price": 2,
+      "team": "Decathlon CMA CGM Team"
+    },
+    {
+      "name": "Sente Sentjens",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Javier Serrano",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Diego Sevilla",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "James Shaw",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Artem Shmidt",
+      "price": 2,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Colby Simmons",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Anders Skaarseth",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Daniel Skerl",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Liam Slock",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Dion Smith",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Nathan Smith",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Gorka Sorarrain",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Antonio Soto",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Mattia Stenico",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Joppe Sterck",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Mark Stewart",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Tyler Stites",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Abram Stockman",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Oliver Stockwell",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Su Haoyu",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Joel Suter",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Jasha Sütterlin",
+      "price": 2,
+      "team": "Team Jayco AlUla"
+    },
+    {
+      "name": "Louis Sutton",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Tobias Svarre",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Martin Svrcek",
+      "price": 2,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Ben Swift",
+      "price": 2,
+      "team": "INEOS Grenadiers"
+    },
+    {
+      "name": "Zsombor Takács",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Manuele Tarozzi",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Rotem Tene",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Fernando Tercero",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Lucas Terrier",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Lennert Teugels",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Roland Thalmann",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Pierre Thierry",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Reuben Thompson",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Senne Thonnon",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Callum Thornley",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Martin Tjøtta",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Alex Tolio",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Davide Toneatti",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Alessandro Tonelli",
+      "price": 2,
+      "team": "Team Polti VisitMalta"
+    },
+    {
+      "name": "Artuur Torney",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Albert Torres",
+      "price": 2,
+      "team": "Movistar Team"
+    },
+    {
+      "name": "Pablo Torres",
+      "price": 2,
+      "team": "UAE Team Emirates - XRG"
+    },
+    {
+      "name": "Adam Toupalík",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Damien Touzé",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Lucas Towers",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Nikita Tsvetkov",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Luke Tuckwell",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    },
+    {
+      "name": "Filippo Turconi",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Gari Ugarte",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Santiago Umba",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Martin Urianstad",
+      "price": 2,
+      "team": "Uno-X Mobility"
+    },
+    {
+      "name": "Diego Uriarte",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Laurent Ury",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Baptiste Vadic",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Márk Valent",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Darren van Bekkum",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Loe van Belle",
+      "price": 2,
+      "team": "Team Visma | Lease a Bike"
+    },
+    {
+      "name": "Henri Vandenabeele",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Julius van den Berg",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Noah Vandenbranden",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Milan Van den Haute",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Dylan Vandenstorme",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Jardi van der Lee",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Max van der Meulen",
+      "price": 2,
+      "team": "Bahrain - Victorious"
+    },
+    {
+      "name": "Axel van der Tuuk",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Danny van der Tuuk",
+      "price": 2,
+      "team": "Euskaltel - Euskadi"
+    },
+    {
+      "name": "Warre Vangheluwe",
+      "price": 2,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Leander Van Hautegem",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Elias Vanheel",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Vincent Van Hemelen",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Ward Vanhoof",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Harm Vanhoucke",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Axandre Van Petegem",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Daan van Sintmaartensdijk",
+      "price": 2,
+      "team": "BEAT Cycling Club "
+    },
+    {
+      "name": "Roel van Sintmaartensdijk",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Floris Van Tricht",
+      "price": 2,
+      "team": "NSN Cycling Team"
+    },
+    {
+      "name": "Baptiste Veistroffer",
+      "price": 2,
+      "team": "Lotto-Intermarché"
+    },
+    {
+      "name": "Mattéo Vercher",
+      "price": 2,
+      "team": "Team TotalEnergies"
+    },
+    {
+      "name": "Victor Vercouillie",
+      "price": 2,
+      "team": "Team Flanders - Baloise"
+    },
+    {
+      "name": "Otto Vergaerde",
+      "price": 2,
+      "team": "Lidl - Trek"
+    },
+    {
+      "name": "Luca Vergallito",
+      "price": 2,
+      "team": "Alpecin - Premier Tech"
+    },
+    {
+      "name": "Jelle Vermoote",
+      "price": 2,
+      "team": "Tarteletto - Isorex"
+    },
+    {
+      "name": "Luca Verrando",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Alessandro Verre",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Killian Verschuren",
+      "price": 2,
+      "team": "Unibet Rose Rockets"
+    },
+    {
+      "name": "Louis Vervaeke",
+      "price": 2,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Jonathan Vervenne",
+      "price": 2,
+      "team": "Soudal Quick-Step"
+    },
+    {
+      "name": "Iker Villar",
+      "price": 2,
+      "team": "Caja Rural - Seguros RGA"
+    },
+    {
+      "name": "Nicolas Vinokurov",
+      "price": 2,
+      "team": "XDS Astana Team"
+    },
+    {
+      "name": "Attilio Viviani",
+      "price": 2,
+      "team": "Solution Tech-NIPPO-Rali"
+    },
+    {
+      "name": "Yannis Voisard",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Max Walker",
+      "price": 2,
+      "team": "EF Education - EasyPost"
+    },
+    {
+      "name": "Larry Warbasse",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Célestin Wattelle",
+      "price": 2,
+      "team": "Team Novo Nordisk"
+    },
+    {
+      "name": "Fabian Weiss",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Bram Welten",
+      "price": 2,
+      "team": "Team Picnic PostNL"
+    },
+    {
+      "name": "Mats Wenzel",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Hannes Wilksch",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Luc Wirtgen",
+      "price": 2,
+      "team": "Tudor Pro Cycling Team"
+    },
+    {
+      "name": "Paul Wright",
+      "price": 2,
+      "team": "Modern Adventure Pro Cycling"
+    },
+    {
+      "name": "Yen  Yi Ho",
+      "price": 2,
+      "team": "Equipo Kern Pharma"
+    },
+    {
+      "name": "Edoardo Zamperini",
+      "price": 2,
+      "team": "Cofidis"
+    },
+    {
+      "name": "Enrico Zanoncello",
+      "price": 2,
+      "team": "Bardiani-CSF 7 Saber"
+    },
+    {
+      "name": "Samuele Zoccarato",
+      "price": 2,
+      "team": "MBH Bank CSB Telecom Fort"
+    },
+    {
+      "name": "Nick Zukowsky",
+      "price": 2,
+      "team": "Pinarello - Q36.5 Pro Cycling"
+    },
+    {
+      "name": "Ben Zwiehoff",
+      "price": 2,
+      "team": "Red Bull - BORA - hansgrohe"
+    }
+  ]
+}
