@@ -14,6 +14,9 @@ const FROM_EMAIL = process.env.FROM_EMAIL;
 
 const riderNames = squad.riders.map((r) => r.name).join(", ");
 
+// Sleep helper to avoid rate limits between agent calls
+const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+
 // ─── Shared fetch helper ──────────────────────────────────────────────────────
 
 async function callClaude({ system, user, tools = [], maxTokens = 2000 }) {
@@ -232,6 +235,8 @@ async function main() {
     });
 
     const research = await runResearcher(today);
+    console.log("Waiting 15s between agents to avoid rate limits...");
+    await sleep(15000);
     const briefingHtml = await runWriter(today, research);
     const email = wrapEmail(briefingHtml, research);
     await sendEmail(email);
