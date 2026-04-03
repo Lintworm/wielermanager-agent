@@ -12,15 +12,39 @@ const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const TO_EMAIL = process.env.TO_EMAIL;
 const FROM_EMAIL = process.env.FROM_EMAIL;
 
-// Only send core riders to researcher (skip fillers, keep it short)
+const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+
+// Today's date for calendar cross-referencing
+const todayISO = new Date().toISOString().split("T")[0]; // e.g. "2026-04-03"
+const todayDisplay = new Date().toLocaleDateString("en-GB", {
+  weekday: "long", year: "numeric", month: "long", day: "numeric",
+});
+
+// Core squad riders (no fillers) for researcher
 const coreRiders = squad.riders
   .filter((r) => r.role === "core")
   .map((r) => r.name)
   .join(", ");
 
-const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
+// Upcoming races only (from gamedata calendar, future dates)
+const upcomingRaces = gamedata.raceCalendar.filter((r) => {
+  // Parse "5-apr" style dates into comparable format
+  const months = { jan:0,feb:1,mrt:2,apr:3,mei:4,jun:5,jul:6,aug:7,sep:8,okt:9,nov:10,dec:11 };
+  const [day, mon] = r.date.split("-");
+  const raceDate = new Date(2026, months[mon], parseInt(day));
+  return raceDate >= new Date(todayISO);
+});
 
-// ─── Shared fetch helper with retry ──────────────────────────────────────────
+// Next transfer cost
+const nextTransferCost = Math.max(0, squad.transfersUsed - 2);
+
+// Compact rider price list (for Tactician's transfer suggestions)
+const riderPriceList = gamedata.allRiders
+  .filter((r) => r.price >= 3)
+  .map((r) => `${r.name} (${r.price}M, ${r.team})`)
+  .join("; ");
+
+// ─── Shared API call with retry ───────────────────────────────────────────────
 
 async function callClaude({ system, user, tools = [], maxTokens = 2000, model = "claude-sonnet-4-20250514" }) {
   for (let attempt = 1; attempt <= 3; attempt++) {
@@ -41,8 +65,8 @@ async function callClaude({ system, user, tools = [], maxTokens = 2000, model = 
     });
 
     if (response.status === 429) {
-      const wait = attempt * 30000; // 30s, 60s, 90s
-      console.log(`Rate limited (attempt ${attempt}). Waiting ${wait/1000}s...`);
+      const wait = attempt * 30000;
+      console.log(`Rate limited (attempt ${attempt}). Waiting ${wait / 1000}s...`);
       await sleep(wait);
       continue;
     }
@@ -53,30 +77,64 @@ async function callClaude({ system, user, tools = [], maxTokens = 2000, model = 
     }
 
     const data = await response.json();
-    return data.content
-      .filter((b) => b.type === "text")
-      .map((b) => b.text)
-      .join("\n");
+    return data.content.filter((b) => b.type === "text").map((b) => b.text).join("\n");
   }
   throw new Error("Failed after 3 retries due to rate limiting");
 }
 
-// ─── Agent 1: Researcher (Haiku) ─────────────────────────────────────────────
+function extractJSON(raw) {
+  let clean = raw.replace(/```json\s*/gi, "").replace(/```\s*/g, "");
+  const start = clean.indexOf("{");
+  const end = clean.lastIndexOf("}");
+  if (start === -1 || end === -1) throw new Error("No JSON object found in response");
+  return JSON.parse(clean.slice(start, end + 1).trim());
+}
 
-async function runResearcher(today) {
+// ─── AGENT 1: Researcher (Haiku) ─────────────────────────────────────────────
+// Pure facts. Calendar-aware. Men's only. Current season only.
+
+async function runResearcher() {
   console.log("Agent 1 (Researcher) starting...");
 
-  // Minimal system prompt to save tokens
-  const system = `You are a cycling research agent. Today is ${today}. Return ONLY a raw JSON object, no markdown, no explanation.
+  const upcomingRaceNames = upcomingRaces.slice(0, 5).map((r) => `${r.name} (${r.date})`).join(", ");
+
+  const system = `You are a cycling research agent. Today is ${todayISO} (${todayDisplay}).
+
+CRITICAL RULES:
+- Only return facts about MEN'S professional cycling
+- Only return startlist/confirmation facts about UPCOMING races (after today ${todayISO})
+- Never include injury or DNS info from previous seasons — current 2026 season only
+- If you are not certain a fact is from 2026, do not include it
+- Return ONLY a raw JSON object, no markdown, no explanation
 
 Required JSON structure:
-{"races":[{"name":"...","date":"...","type":"Monument|WorldTour|NietWorldTour"}],"starters":{"race name":["Rider Name"]},"dns":{"race name":[{"name":"...","reason":"..."}]},"news":[{"headline":"...","detail":"...","source":"...","relevance":"..."}]}`;
+{
+  "today": "${todayISO}",
+  "upcomingRaces": [
+    { "name": "...", "date": "YYYY-MM-DD", "type": "Monument|WorldTour|NietWorldTour", "daysAway": 0 }
+  ],
+  "startlists": {
+    "Race Name": {
+      "confirmed": ["Rider Name"],
+      "withdrawn": [{ "name": "Rider Name", "reason": "..." }],
+      "source": "url or site name",
+      "confidence": "official|reported|rumoured"
+    }
+  },
+  "riderNews": [
+    { "rider": "Name", "news": "...", "type": "injury|form|dns|return", "source": "...", "season": "2026" }
+  ],
+  "generalNews": [
+    { "headline": "...", "detail": "...", "source": "...", "relevance": "..." }
+  ]
+}`;
 
-  const user = `Search for MEN'S professional cycling only (ignore all women's races):
-1. Men's pro cycling races in the next 7 days (name, date, type)
-2. Startlists for men's races in next 2 days: search "[race] 2026 startlist"
-3. DNS/injury news for these riders, current 2026 season only (ignore previous seasons): ${coreRiders}
-4. Latest men's cycling news last 24h (min 3 items) from Sporza or WielerFlits — NO women's race results
+  const user = `Today is ${todayISO}. Upcoming races to research: ${upcomingRaceNames}
+
+Search for:
+1. Startlists for the next 2 upcoming men's races: search "[race name] 2026 startlist" and "[race name] 2026 deelnemerslijst". Only include riders confirmed AFTER today.
+2. Current 2026 season news for these riders: ${coreRiders}. Search "[rider] 2026 [next race name]". Ignore anything from 2025 or earlier.
+3. Men's cycling news from last 48h: search "cycling news today 2026" on Sporza and WielerFlits. Minimum 3 items. No women's races.
 
 Return only the JSON object.`;
 
@@ -88,77 +146,127 @@ Return only the JSON object.`;
     model: "claude-haiku-4-5-20251001",
   });
 
-  // Extract JSON robustly
-  let clean = raw.replace(/```json\s*/gi, "").replace(/```\s*/g, "");
-  const start = clean.indexOf("{");
-  const end = clean.lastIndexOf("}");
-  if (start === -1 || end === -1) throw new Error("Researcher returned no JSON object");
-  clean = clean.slice(start, end + 1).trim();
-
-  try {
-    const data = JSON.parse(clean);
-    console.log(`Agent 1 done: ${data.races?.length ?? 0} races, ${data.news?.length ?? 0} news items`);
-    return data;
-  } catch (e) {
-    console.error("JSON parse failed:", e.message, clean.slice(0, 300));
-    throw new Error("Researcher agent returned invalid JSON");
-  }
+  const data = extractJSON(raw);
+  console.log(`Agent 1 done: ${data.upcomingRaces?.length ?? 0} upcoming races, ${data.generalNews?.length ?? 0} news items`);
+  return data;
 }
 
-// ─── Agent 2: Writer (Sonnet) ─────────────────────────────────────────────────
+// ─── AGENT 2: Tactician (Sonnet) ─────────────────────────────────────────────
+// Pure decisions. No prose. Outputs structured tactical JSON.
 
-async function runWriter(today, research) {
-  console.log("Agent 2 (Writer) starting...");
+async function runTactician(research) {
+  console.log("Agent 2 (Tactician) starting...");
 
-  const { allRiders, ...gamedataSlim } = gamedata;
-  // Compact rider list for transfer/watch suggestions (name + price only, skip price-2 fillers)
-  const riderPriceList = allRiders
-    .filter(r => r.price >= 3)
-    .map(r => `${r.name} (${r.price}M, ${r.team})`)
-    .join(", ");
-  const nextTransferCost = Math.max(0, squad.transfersUsed - 2);
+  const squadNames = squad.riders.map((r) => r.name);
 
-  const system = `You are a Sporza Wielermanager briefing writer for the 2026 spring classics season.
+  const system = `You are a Sporza Wielermanager tactical analyst. You make optimal decisions based on verified data.
 
-## Game Rules (key facts)
-- Squad: 20 riders. Field 12 per race, 8 on bench.
-- Kopman bonus (on top of normal points): 1st=30, 2nd=25, 3rd=20, 4th=15, 5th=10, 6th=5
-- Teammate of winner: +10 bonus points
-- Points to position 30. Monument win=125pts, WorldTour win=100pts, NietWorldTour win=80pts.
-- Free transfers: 3 total. Thomas has used ${squad.transfersUsed}. Next transfer costs ${nextTransferCost}M.
-- Max 4 riders per team.
+## Scoring system
+- Monument: 1st=125, 2nd=100, 3rd=80, 4th=70, 5th=60, 6th=55, 7th=50, 8th=45, 9th=40, 10th=37
+- WorldTour: 1st=100, 2nd=80, 3rd=65, 4th=55, 5th=48, 6th=44, 7th=40, 8th=36, 9th=32, 10th=30
+- NietWorldTour: 1st=80, 2nd=64, 3rd=52, 4th=44, 5th=38, 6th=35, 7th=32, 8th=29, 9th=26, 10th=24
+- Kopman bonus (on top): 1st=+30, 2nd=+25, 3rd=+20, 4th=+15, 5th=+10, 6th=+5
+- Teammate of winner: +10 pts regardless of finishing position
+- Points scored only by the 12 fielded riders (not bench)
 
-## Race calendar (remaining)
-${JSON.stringify(gamedataSlim.raceCalendar, null, 2)}
+## Race calendar (upcoming only)
+${JSON.stringify(upcomingRaces, null, 2)}
 
 ## Thomas's squad
 ${JSON.stringify(squad, null, 2)}
 
-## All available riders (price ≥ 3M, for Riders to Watch suggestions)
+## Transfer state
+- Transfers used: ${squad.transfersUsed} (3 free total)
+- Next transfer cost: ${nextTransferCost}M, then ${nextTransferCost + 1}M, etc.
+- Budget remaining: ${squad.budget}M
+
+## Available riders for transfer (price ≥ 3M, not in squad)
 ${riderPriceList}
 
-## Rules
-- ONLY recommend riders confirmed in the verified startlist. If not confirmed, bench them with a note.
-- CRITICAL: Only include injury/DNS info from the current 2026 season. Never reference injuries or news from previous seasons.
-- Only include MEN'S race news. Ignore all women's cycling results and news entirely.
-- Never invent news — only use items from research data.
-- Last names only. Direct and punchy.
-- Clean HTML only: <h2> headers, <ul><li> lists, <strong> emphasis. No markdown.
-- Return inner HTML only, no <html>/<body> tags.`;
+## Decision rules
+- Only field riders confirmed in the startlist. Unconfirmed = bench, flagged.
+- Kopman must be a realistic top-6 finisher in this specific race. Never waste kopman on a bench rider.
+- For transfer advice: weigh cost (in budget millions) vs. point gain over remaining races. Discourage burning transfers for single races.
+- Riders to watch: find non-squad riders with high point potential in upcoming races.
+- Phase awareness: cobbled phase ends after Parijs-Roubaix (12 apr). Ardennes phase starts 15 apr.
 
-  const user = `Today is ${today}.
+You must return ONLY a raw JSON object. No markdown. No explanation.
 
-Verified research data:
+Required structure:
+{
+  "nextRace": { "name": "...", "date": "...", "type": "..." },
+  "lineup": [
+    { "name": "...", "reason": "...", "expectedPoints": "range e.g. 30-80" }
+  ],
+  "bench": [
+    { "name": "...", "reason": "...", "flag": "DNS|unconfirmed|filler|low-value" }
+  ],
+  "kopman": { "name": "...", "reason": "...", "maxBonusPossible": 0 },
+  "transfers": {
+    "recommendation": "hold|act",
+    "action": "...",
+    "cost": "...",
+    "reasoning": "..."
+  },
+  "ridersToWatch": [
+    { "name": "...", "price": 0, "team": "...", "reason": "..." }
+  ],
+  "seasonOutlook": "one sentence on phase transition or long-term strategy"
+}`;
+
+  const user = `Here is today's verified research data:
 ${JSON.stringify(research, null, 2)}
 
-Write the daily briefing:
-1. <h2>This Week's Races</h2> — with dates and type
-2. <h2>Recommended Lineup (12)</h2> — confirmed starters only, point potential per rider
-3. <h2>Bench (8)</h2> — with DNS flags where relevant
-4. <h2>Kopman Pick</h2> — who, why, max bonus points possible
-5. <h2>Transfers</h2> — cost ${nextTransferCost}M for next transfer. Recommend action or hold.
-6. <h2>Riders to Watch</h2> — 3-5 riders NOT in Thomas's squad who could score big in upcoming races. Include their price from the gamedata allRiders list and why they're interesting. Focus on value picks and potential race winners.
-7. <h2>News & Gossip</h2> — men's cycling only, from research data, with source`;
+Make optimal tactical decisions for Thomas's Wielermanager team. Remember:
+- Only field riders who appear in research.startlists[nextRace].confirmed
+- If startlist confidence is "rumoured", flag the rider as unconfirmed on bench
+- Kopman must realistically finish top 6 in a ${research.upcomingRaces?.[0]?.type ?? "race"} race
+- Riders to watch should NOT be in Thomas's squad (${squadNames.join(", ")})
+
+Return only the JSON object.`;
+
+  const raw = await callClaude({
+    system,
+    user,
+    tools: [],
+    maxTokens: 2000,
+    model: "claude-sonnet-4-20250514",
+  });
+
+  const data = extractJSON(raw);
+  console.log(`Agent 2 done: lineup=${data.lineup?.length ?? 0}, kopman=${data.kopman?.name ?? "?"}, transfer=${data.transfers?.recommendation ?? "?"}`);
+  return data;
+}
+
+// ─── AGENT 3: Writer (Sonnet) ─────────────────────────────────────────────────
+// Pure writing. Receives research + tactics. Produces HTML. No decisions.
+
+async function runWriter(research, tactics) {
+  console.log("Agent 3 (Writer) starting...");
+
+  const system = `You are a sharp cycling newsletter writer. You receive pre-made tactical decisions and verified news, and write a clean daily email briefing. You do NOT make decisions — you only present them clearly.
+
+Style: direct, punchy, last names only (except to disambiguate). No fluff.
+Format: clean HTML only. Use <h2> for sections, <ul><li> for lists, <strong> for key info.
+No markdown, no asterisks, no # symbols. Return inner HTML body content only.`;
+
+  const user = `Today is ${todayDisplay}.
+
+TACTICAL DECISIONS (pre-made, just present these clearly):
+${JSON.stringify(tactics, null, 2)}
+
+VERIFIED NEWS (men's cycling only, current season):
+${JSON.stringify({ riderNews: research.riderNews, generalNews: research.generalNews }, null, 2)}
+
+Write the briefing with exactly these sections:
+1. <h2>This Week's Races</h2> — upcoming races with dates and point category
+2. <h2>Recommended Lineup (12)</h2> — from tactics.lineup, with expected points
+3. <h2>Bench (8)</h2> — from tactics.bench, clearly flag any DNS/unconfirmed
+4. <h2>Kopman Pick</h2> — from tactics.kopman, state max kopman bonus possible
+5. <h2>Transfers</h2> — from tactics.transfers, state cost explicitly
+6. <h2>Riders to Watch</h2> — from tactics.ridersToWatch, include price and team
+7. <h2>Season Outlook</h2> — one line from tactics.seasonOutlook
+8. <h2>News & Gossip</h2> — from verified news only, with source, men's races only`;
 
   const html = await callClaude({
     system,
@@ -168,18 +276,15 @@ Write the daily briefing:
     model: "claude-sonnet-4-20250514",
   });
 
-  console.log("Agent 2 done.");
+  console.log("Agent 3 done.");
   return html;
 }
 
 // ─── Email wrapper ────────────────────────────────────────────────────────────
 
-function wrapEmail(briefingHtml, research) {
-  const today = new Date().toLocaleDateString("en-GB", {
-    weekday: "long", day: "numeric", month: "long", year: "numeric",
-  });
-  const nextRace = research.races?.[0]?.name ?? "upcoming race";
-  const nextRaceType = research.races?.[0]?.type ?? "";
+function wrapEmail(briefingHtml, tactics) {
+  const nextRace = tactics.nextRace?.name ?? "upcoming race";
+  const nextRaceType = tactics.nextRace?.type ?? "";
 
   return `<!DOCTYPE html>
 <html><head><meta charset="utf-8"><style>
@@ -194,12 +299,14 @@ function wrapEmail(briefingHtml, research) {
   .badge{display:inline-block;background:#e8281e;color:white;font-size:10px;padding:2px 6px;border-radius:3px;margin-left:6px;font-family:sans-serif}
 </style></head><body>
   <h1>🚴 Wielermanager Daily Briefing <span class="badge">${nextRaceType}</span></h1>
-  <div class="date">${today}</div>
+  <div class="date">${todayDisplay}</div>
   ${briefingHtml}
   <div class="reply-hint">
     💬 <strong>Did a transfer?</strong> Reply — e.g. <em>"Out: Alleno, Kudus — In: Aranburu, Hermans"</em> — and your squad updates automatically.
   </div>
-  <div class="footer">Wielermanager Agent · squad last updated ${squad.lastUpdated} · transfers used: ${squad.transfersUsed}/3 free · next race: ${nextRace}</div>
+  <div class="footer">
+    Wielermanager Agent · squad updated ${squad.lastUpdated} · transfers used: ${squad.transfersUsed}/3 free · next transfer costs ${nextTransferCost}M · next race: ${nextRace}
+  </div>
 </body></html>`;
 }
 
@@ -222,17 +329,27 @@ async function sendEmail(htmlContent) {
 
 async function main() {
   try {
-    console.log("Starting Wielermanager agent...");
-    const today = new Date().toLocaleDateString("en-GB", {
-      weekday: "long", year: "numeric", month: "long", day: "numeric",
-    });
+    console.log(`Starting Wielermanager agent — ${todayDisplay}`);
 
-    const research = await runResearcher(today);
-    console.log("Waiting 20s before writer...");
+    // Agent 1: Research
+    const research = await runResearcher();
+
+    console.log("Waiting 20s before Tactician...");
     await sleep(20000);
-    const briefingHtml = await runWriter(today, research);
-    const email = wrapEmail(briefingHtml, research);
+
+    // Agent 2: Tactical decisions
+    const tactics = await runTactician(research);
+
+    console.log("Waiting 20s before Writer...");
+    await sleep(20000);
+
+    // Agent 3: Write email
+    const briefingHtml = await runWriter(research, tactics);
+
+    // Wrap and send
+    const email = wrapEmail(briefingHtml, tactics);
     await sendEmail(email);
+
     console.log("Done ✓");
   } catch (err) {
     console.error("Agent failed:", err);
