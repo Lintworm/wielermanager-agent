@@ -5,6 +5,7 @@ import { Resend } from "resend";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const squad = JSON.parse(fs.readFileSync(path.join(__dirname, "squad.json"), "utf8"));
+const gamedata = JSON.parse(fs.readFileSync(path.join(__dirname, "gamedata.json"), "utf8"));
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
@@ -59,7 +60,7 @@ The JSON must follow this exact structure:
     {
       "name": "race name",
       "date": "day month year",
-      "type": "cobbled|ardennes|other"
+      "type": "Monument|WorldTour|NonWorldTour"
     }
   ],
   "starters": {
@@ -111,21 +112,23 @@ Return only the JSON object. No other text.`;
 async function runWriter(today, research) {
   console.log("Agent 2 (Writer) starting...");
 
-  const system = `You are a Sporza Wielermanager briefing writer. Sporza Wielermanager is a Belgian fantasy cycling game for the 2026 spring classics season.
+  // Strip allRiders from gamedata passed to writer — only send rules + calendar
+  // (squad already has their riders; full 938-rider list would bloat context)
+  const { allRiders, ...gamedataForWriter } = gamedata;
 
-## Game mechanics
-- Thomas has a squad of riders. Each race day he picks 12 to score points; the other 8 are on the bench ("bus").
-- One rider is designated kopman (captain) and scores double points.
-- Transfers happen in windows — burning transfers mid-cobbled-season for marginal gains is bad strategy.
-- The season has two phases: cobbled classics then Ardennes. Pivot happens post-Roubaix.
-- Filler riders are cheap riders used to balance transfer budgets — bench them until released.
+  const system = `You are a Sporza Wielermanager briefing writer. You have full knowledge of the game rules, scoring system, race calendar, and transfer mechanics.
+
+## Official Game Rules & Scoring
+${JSON.stringify(gamedataForWriter, null, 2)}
 
 ## Thomas's current squad
 ${JSON.stringify(squad, null, 2)}
 
 ## Writing rules
-- CRITICAL: Only recommend riders confirmed as starting in the next race. If a rider is not in the startlist or is listed as DNS, put them on the bench and flag with "(DNS)" or "(not starting)".
-- Only include gossip items from the research data — do not invent or add any news.
+- CRITICAL: Only recommend riders confirmed as starting in the next race. If a rider is not in the verified startlist or is listed as DNS, bench them and flag with (DNS) or (startlist unknown — bench as precaution).
+- Use the official scoring table to reason about kopman choices — pick whoever has the best chance of a top-6 finish in this specific race type (Monument vs WorldTour vs NonWorldTour).
+- For transfer advice: Thomas has used ${squad.transfersUsed} transfers so far. The next transfer costs ${Math.max(0, squad.transfersUsed - 2)}M, the one after ${Math.max(0, squad.transfersUsed - 1)}M, etc. Always state the cost explicitly when recommending a transfer. Weigh the point gain against the budget hit and remaining races.
+- Only include gossip items from the research data — never invent news.
 - Use rider last names only (except to disambiguate).
 - Be direct and punchy. No fluff.
 - Format as clean HTML only. Use <h2> for section headers, <ul><li> for lists, <strong> for emphasis.
@@ -134,16 +137,16 @@ ${JSON.stringify(squad, null, 2)}
 
   const user = `Today is ${today}.
 
-Here is the verified research data:
+Here is the verified research data from the researcher agent:
 ${JSON.stringify(research, null, 2)}
 
 Write the daily Wielermanager briefing with these sections:
-1. <h2>This Week's Races</h2> — races in next 7 days with dates
-2. <h2>Recommended Lineup (12)</h2> — confirmed starters only, brief reason per rider
-3. <h2>Bench</h2> — remaining riders, flag any DNS clearly
-4. <h2>Kopman Pick</h2> — who and why
-5. <h2>Transfers</h2> — any action needed, or confirm to hold
-6. <h2>News & Gossip</h2> — only items from the research data, include source`;
+1. <h2>This Week's Races</h2> — races in next 7 days with dates and point category (Monument/WorldTour/NonWorldTour)
+2. <h2>Recommended Lineup (12)</h2> — confirmed starters only, with brief reason per rider including point potential
+3. <h2>Bench (8)</h2> — remaining riders, flag any DNS or startlist-unknown clearly
+4. <h2>Kopman Pick</h2> — who, why, and what kopman bonus points are realistically on the table
+5. <h2>Transfers</h2> — any action needed based on remaining calendar, or confirm to hold. If suggesting a transfer, include the price of the rider to bring in vs out.
+6. <h2>News & Gossip</h2> — only items from the research data, with source attribution`;
 
   const html = await callClaude({
     system,
@@ -164,6 +167,7 @@ function wrapEmail(briefingHtml, research) {
   });
 
   const nextRace = research.races?.[0]?.name ?? "upcoming race";
+  const nextRaceType = research.races?.[0]?.type ?? "";
 
   return `<!DOCTYPE html>
 <html>
@@ -178,10 +182,11 @@ function wrapEmail(briefingHtml, research) {
   li { margin-bottom: 6px; line-height: 1.5; }
   .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 12px; color: #999; }
   .reply-hint { background: #f0f4ff; border-left: 3px solid #4466cc; padding: 10px 14px; margin-top: 24px; font-size: 13px; border-radius: 2px; }
+  .race-badge { display: inline-block; background: #e8281e; color: white; font-size: 10px; padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; font-family: sans-serif; }
 </style>
 </head>
 <body>
-  <h1>🚴 Wielermanager Daily Briefing</h1>
+  <h1>🚴 Wielermanager Daily Briefing <span class="race-badge">${nextRaceType}</span></h1>
   <div class="date">${today}</div>
 
   ${briefingHtml}
