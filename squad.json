@@ -1,34 +1,178 @@
 {
   "lastUpdated": "2026-04-04",
   "budget": 0,
+  "transfersUsed": 3,
+  "transferLog": [
+    {
+      "date": "pre-RVV",
+      "out": [
+        "Tim Wellens",
+        "Paul Magnier",
+        "Albert-Willem Philipsen"
+      ],
+      "in": [
+        "Remco Evenepoel",
+        "Clément Alleno",
+        "Merhawi Kudus"
+      ],
+      "cost": 0,
+      "notes": "3 free transfers used in one window"
+    }
+  ],
   "kopman": "Mathieu van der Poel",
   "riders": [
-    { "name": "Mathieu van der Poel", "price": 14, "team": "Alpecin - Premier Tech", "role": "core", "notes": "Primary kopman for cobbled races" },
-    { "name": "Tadej Pogačar", "price": 14, "team": "UAE Team Emirates - XRG", "role": "core", "notes": "Kopman candidate for Ardennes" },
-    { "name": "Remco Evenepoel", "price": 12, "team": "Red Bull - BORA - hansgrohe", "role": "core", "notes": "Kopman candidate for Ardennes" },
-    { "name": "Jasper Philipsen", "price": 9, "team": "Alpecin - Premier Tech", "role": "core", "notes": "" },
-    { "name": "Tom Pidcock", "price": 8, "team": "Pinarello - Q36.5 Pro Cycling", "role": "core", "notes": "" },
-    { "name": "Matthew Brennan", "price": 6, "team": "Team Visma | Lease a Bike", "role": "core", "notes": "Roubaix coverage" },
-    { "name": "Matteo Jorgenson", "price": 6, "team": "Team Visma | Lease a Bike", "role": "core", "notes": "" },
-    { "name": "Romain Grégoire", "price": 5, "team": "Groupama - FDJ United", "role": "core", "notes": "" },
-    { "name": "Christophe Laporte", "price": 5, "team": "Team Visma | Lease a Bike", "role": "core", "notes": "" },
-    { "name": "Matej Mohorič", "price": 5, "team": "Bahrain - Victorious", "role": "core", "notes": "Roubaix coverage" },
-    { "name": "Florian Vermeersch", "price": 5, "team": "UAE Team Emirates - XRG", "role": "core", "notes": "" },
-    { "name": "Nils Politt", "price": 4, "team": "UAE Team Emirates - XRG", "role": "core", "notes": "Roubaix coverage" },
-    { "name": "Stan Dewulf", "price": 3, "team": "Decathlon CMA CGM Team", "role": "core", "notes": "Roubaix coverage" },
-    { "name": "Anthony Turgis", "price": 4, "team": "Team TotalEnergies", "role": "core", "notes": "" },
-    { "name": "Tobias Lund Andresen", "price": 4, "team": "Decathlon CMA CGM Team", "role": "core", "notes": "" },
-    { "name": "Tom Crabbé", "price": 3, "team": "Team Flanders - Baloise", "role": "core", "notes": "" },
-    { "name": "Milan Fretin", "price": 5, "team": "Cofidis", "role": "core", "notes": "" },
-    { "name": "Clément Alleno", "price": 2, "team": "Burgos Burpellet BH", "role": "filler", "notes": "Temporary filler — release post-Roubaix" },
-    { "name": "Merhawi Kudus", "price": 2, "team": "Burgos Burpellet BH", "role": "filler", "notes": "Temporary filler — release post-Roubaix" },
-    { "name": "Lukas Kubis", "price": 4, "team": "Unibet Rose Rockets", "role": "core", "notes": "" }
+    {
+      "name": "Mathieu van der Poel",
+      "price": 14,
+      "team": "Alpecin - Premier Tech",
+      "role": "core",
+      "notes": "Primary kopman for cobbled races"
+    },
+    {
+      "name": "Tadej Pogačar",
+      "price": 14,
+      "team": "UAE Team Emirates - XRG",
+      "role": "core",
+      "notes": "Kopman candidate for Ardennes"
+    },
+    {
+      "name": "Remco Evenepoel",
+      "price": 12,
+      "team": "Red Bull - BORA - hansgrohe",
+      "role": "core",
+      "notes": "Kopman candidate for Ardennes"
+    },
+    {
+      "name": "Jasper Philipsen",
+      "price": 9,
+      "team": "Alpecin - Premier Tech",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Tom Pidcock",
+      "price": 8,
+      "team": "Pinarello - Q36.5 Pro Cycling",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Matthew Brennan",
+      "price": 6,
+      "team": "Team Visma | Lease a Bike",
+      "role": "core",
+      "notes": "Roubaix coverage"
+    },
+    {
+      "name": "Matteo Jorgenson",
+      "price": 6,
+      "team": "Team Visma | Lease a Bike",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Romain Grégoire",
+      "price": 5,
+      "team": "Groupama - FDJ United",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Christophe Laporte",
+      "price": 5,
+      "team": "Team Visma | Lease a Bike",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Matej Mohorič",
+      "price": 5,
+      "team": "Bahrain - Victorious",
+      "role": "core",
+      "notes": "Roubaix coverage"
+    },
+    {
+      "name": "Florian Vermeersch",
+      "price": 5,
+      "team": "UAE Team Emirates - XRG",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Nils Politt",
+      "price": 4,
+      "team": "UAE Team Emirates - XRG",
+      "role": "core",
+      "notes": "Roubaix coverage"
+    },
+    {
+      "name": "Stan Dewulf",
+      "price": 3,
+      "team": "Decathlon CMA CGM Team",
+      "role": "core",
+      "notes": "Roubaix coverage"
+    },
+    {
+      "name": "Anthony Turgis",
+      "price": 4,
+      "team": "Team TotalEnergies",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Tobias Lund Andresen",
+      "price": 4,
+      "team": "Decathlon CMA CGM Team",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Tom Crabbé",
+      "price": 3,
+      "team": "Team Flanders - Baloise",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Milan Fretin",
+      "price": 5,
+      "team": "Cofidis",
+      "role": "core",
+      "notes": ""
+    },
+    {
+      "name": "Clément Alleno",
+      "price": 2,
+      "team": "Burgos Burpellet BH",
+      "role": "filler",
+      "notes": "Temporary filler — release post-Roubaix"
+    },
+    {
+      "name": "Merhawi Kudus",
+      "price": 2,
+      "team": "Burgos Burpellet BH",
+      "role": "filler",
+      "notes": "Temporary filler — release post-Roubaix"
+    },
+    {
+      "name": "Lukáš Kubiš",
+      "price": 4,
+      "team": "Unibet Rose Rockets",
+      "role": "core",
+      "notes": ""
+    }
   ],
   "upcomingTransfers": [
     {
       "timing": "post-Roubaix (after 13 April)",
-      "out": ["Clément Alleno", "Merhawi Kudus"],
-      "in": ["Alex Aranburu", "Quinten Hermans"],
+      "out": [
+        "Clément Alleno",
+        "Merhawi Kudus"
+      ],
+      "in": [
+        "Alex Aranburu",
+        "Quinten Hermans"
+      ],
       "notes": "Pivot to Ardennes phase"
     }
   ],
