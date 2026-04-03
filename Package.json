@@ -1,0 +1,11 @@
+{
+  "name": "wielermanager-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node agent.js"
+  },
+  "dependencies": {
+    "resend": "^3.2.0"
+  }
+}
