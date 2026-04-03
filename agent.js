@@ -100,13 +100,25 @@ Return only the JSON object. No other text.`;
     model: "claude-haiku-4-5-20251001",
   });
 
-  const clean = raw.replace(/```json|```/g, "").trim();
+  // Robustly extract JSON — handle markdown fences, leading text, trailing text
+  let clean = raw;
+  // Strip markdown code fences
+  clean = clean.replace(/```json\s*/gi, "").replace(/```\s*/g, "");
+  // Find the first { and last } to extract just the JSON object
+  const start = clean.indexOf("{");
+  const end = clean.lastIndexOf("}");
+  if (start === -1 || end === -1) {
+    console.error("Agent 1: no JSON object found in output:", raw);
+    throw new Error("Researcher agent returned no JSON object");
+  }
+  clean = clean.slice(start, end + 1).trim();
   try {
     const data = JSON.parse(clean);
     console.log(`Agent 1 done: ${data.races?.length ?? 0} races, ${data.news?.length ?? 0} news items`);
     return data;
   } catch (e) {
-    console.error("Agent 1 JSON parse failed, raw output:", raw);
+    console.error("Agent 1 JSON parse failed:", e.message);
+    console.error("Attempted to parse:", clean.slice(0, 500));
     throw new Error("Researcher agent returned invalid JSON");
   }
 }
