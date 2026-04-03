@@ -22,6 +22,7 @@
     { "name": "Milan Fretin", "price": 5, "team": "Cofidis", "role": "core", "notes": "" },
     { "name": "Clément Alleno", "price": 2, "team": "Burgos Burpellet BH", "role": "filler", "notes": "Temporary filler — release post-Roubaix" },
     { "name": "Merhawi Kudus", "price": 2, "team": "Burgos Burpellet BH", "role": "filler", "notes": "Temporary filler — release post-Roubaix" }
+    {"name": "Lukáš Kubiš","price": 4,"team": "Unibet Rose Rockets","role": "core","notes": ""}
   ],
   "upcomingTransfers": [
     {
