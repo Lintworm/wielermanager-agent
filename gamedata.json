@@ -1,19 +1,196 @@
 {
   "season": "Sporza Wielermanager Voorjaar Mannen 2026",
   "budget": {
-    "total": 100,
+    "total": 120,
     "unit": "miljoen",
     "squadSize": 20,
-    "playingXI": 12,
-    "bench": 8
+    "playersInRace": 12,
+    "bench": 8,
+    "maxRidersPerTeam": 4
   },
   "transfers": {
     "freeTransfers": 3,
-    "costPerExtraTransfer": "cumulative: 4th = +1M, 5th = +2M, 6th = +3M, etc.",
-    "notes": "Unlimited transfers allowed. Budget must balance exactly (price in = price out). Transfers within a window are cumulative — burning multiple transfers for marginal gains is poor strategy."
+    "costs": {
+      "transfer1": "gratis",
+      "transfer2": "gratis",
+      "transfer3": "gratis",
+      "transfer4": "1 miljoen",
+      "transfer5": "2 miljoen",
+      "transfer6": "3 miljoen",
+      "transfer7": "4 miljoen",
+      "transfer8": "5 miljoen",
+      "transfer9": "6 miljoen",
+      "transfer10": "7 miljoen"
+    },
+    "notes": [
+      "Transfer cost is deducted from available budget",
+      "Budget must balance: price of riders in minus price of riders out minus transfer costs = 0",
+      "You can cancel transfers up until the deadline of the next race",
+      "Until the start of the first race you can change your squad freely",
+      "After that, each transfer brings in exactly one new rider"
+    ]
+  },
+  "scoring": {
+    "notes": [
+      "Only the 12 riders you field (not bench) can score points",
+      "Top 30 finishers score points",
+      "Teammate bonus: +10 points if your rider is a teammate of the race winner, regardless of finishing position"
+    ],
+    "pointsTable": {
+      "1": {
+        "Monument": 125,
+        "WorldTour": 100,
+        "NietWorldTour": 80
+      },
+      "2": {
+        "Monument": 100,
+        "WorldTour": 80,
+        "NietWorldTour": 64
+      },
+      "3": {
+        "Monument": 80,
+        "WorldTour": 65,
+        "NietWorldTour": 52
+      },
+      "4": {
+        "Monument": 70,
+        "WorldTour": 55,
+        "NietWorldTour": 44
+      },
+      "5": {
+        "Monument": 60,
+        "WorldTour": 48,
+        "NietWorldTour": 38
+      },
+      "6": {
+        "Monument": 55,
+        "WorldTour": 44,
+        "NietWorldTour": 35
+      },
+      "7": {
+        "Monument": 50,
+        "WorldTour": 40,
+        "NietWorldTour": 32
+      },
+      "8": {
+        "Monument": 45,
+        "WorldTour": 36,
+        "NietWorldTour": 29
+      },
+      "9": {
+        "Monument": 40,
+        "WorldTour": 32,
+        "NietWorldTour": 26
+      },
+      "10": {
+        "Monument": 37,
+        "WorldTour": 30,
+        "NietWorldTour": 24
+      },
+      "11": {
+        "Monument": 34,
+        "WorldTour": 27,
+        "NietWorldTour": 22
+      },
+      "12": {
+        "Monument": 31,
+        "WorldTour": 24,
+        "NietWorldTour": 20
+      },
+      "13": {
+        "Monument": 28,
+        "WorldTour": 22,
+        "NietWorldTour": 18
+      },
+      "14": {
+        "Monument": 25,
+        "WorldTour": 20,
+        "NietWorldTour": 16
+      },
+      "15": {
+        "Monument": 22,
+        "WorldTour": 18,
+        "NietWorldTour": 14
+      },
+      "16": {
+        "Monument": 20,
+        "WorldTour": 16,
+        "NietWorldTour": 12
+      },
+      "17": {
+        "Monument": 18,
+        "WorldTour": 14,
+        "NietWorldTour": 11
+      },
+      "18": {
+        "Monument": 16,
+        "WorldTour": 12,
+        "NietWorldTour": 10
+      },
+      "19": {
+        "Monument": 14,
+        "WorldTour": 10,
+        "NietWorldTour": 9
+      },
+      "20": {
+        "Monument": 12,
+        "WorldTour": 9,
+        "NietWorldTour": 8
+      },
+      "21": {
+        "Monument": 10,
+        "WorldTour": 8,
+        "NietWorldTour": 7
+      },
+      "22": {
+        "Monument": 9,
+        "WorldTour": 7,
+        "NietWorldTour": 6
+      },
+      "23": {
+        "Monument": 8,
+        "WorldTour": 6,
+        "NietWorldTour": 5
+      },
+      "24": {
+        "Monument": 7,
+        "WorldTour": 5,
+        "NietWorldTour": 4
+      },
+      "25": {
+        "Monument": 6,
+        "WorldTour": 4,
+        "NietWorldTour": 3
+      },
+      "26": {
+        "Monument": 5,
+        "WorldTour": 3,
+        "NietWorldTour": 3
+      },
+      "27": {
+        "Monument": 4,
+        "WorldTour": 2,
+        "NietWorldTour": 2
+      },
+      "28": {
+        "Monument": 3,
+        "WorldTour": 2,
+        "NietWorldTour": 2
+      },
+      "29": {
+        "Monument": 2,
+        "WorldTour": 1,
+        "NietWorldTour": 1
+      },
+      "30": {
+        "Monument": 1,
+        "WorldTour": 1,
+        "NietWorldTour": 1
+      }
+    }
   },
   "kopman": {
-    "description": "One rider designated as captain per race. Kopman earns BONUS points on top of normal race points based on finishing position.",
+    "description": "Designate one kopman per race. Kopman earns BONUS points on top of normal race points if they finish top 6.",
     "bonusPoints": {
       "1st": 30,
       "2nd": 25,
@@ -22,183 +199,134 @@
       "5th": 10,
       "6th": 5
     },
-    "notes": "Kopman bonus is IN ADDITION to normal points. Only positions 1-6 earn kopman bonus. Choose kopman per race — pivotal decision that separates good managers from great ones."
-  },
-  "scoring": {
-    "notes": "Top 30 finishers score points (up to position 30). Points vary by race category.",
-    "categories": {
-      "Monument": {
-        "races": [
-          "Milaan-San Remo",
-          "Ronde van Vlaanderen",
-          "Paris-Roubaix",
-          "Amstel Gold Race",
-          "Luik-Bastenaken-Luik"
-        ],
-        "points": {
-          "1st": 125,
-          "2nd": 90,
-          "3rd": 75,
-          "4th": 65,
-          "5th": 55,
-          "6th": 50,
-          "7th": 45,
-          "8th": 40,
-          "9th": 37,
-          "10th": 34,
-          "11th": 31,
-          "12th": 28,
-          "13th": 26,
-          "14th": 25,
-          "15th": 22,
-          "16th": 20,
-          "17th": 18,
-          "18th": 16,
-          "19th": 14,
-          "20th": 12,
-          "21-25th": "~5-10",
-          "26-30th": "1-5"
-        }
-      },
-      "WorldTour": {
-        "races": [
-          "Omloop Het Nieuwsblad",
-          "Strade Bianche",
-          "Tirreno-Adriatico stages",
-          "E3 Saxo Bank Classic",
-          "Gent-Wevelgem",
-          "Dwars door Vlaanderen",
-          "Flèche Wallonne"
-        ],
-        "win": 100,
-        "notes": "Points scale down from 100 for win"
-      },
-      "NonWorldTour": {
-        "races": [
-          "Kuurne-Brussel-Kuurne",
-          "Nokere Koerse",
-          "Le Samyn",
-          "Handzame Classic",
-          "Bredene Koksijde Classic",
-          "Scheldeprijs"
-        ],
-        "win": 80,
-        "notes": "Points scale down from 80 for win. Lower positions still earn meaningful points due to 2026 rule change."
-      }
-    }
+    "teammatBonus": "The teammate(s) of the race winner earn 10 bonus points regardless of finishing position",
+    "notes": "Kopman bonus stacks on top of normal points. A Monument win = 125 + 30 = 155 points for your kopman."
   },
   "raceCalendar": [
     {
-      "name": "Omloop Het Nieuwsblad",
-      "date": "28 February 2026",
+      "date": "28-feb",
+      "name": "Omloop Nieuwsblad",
       "type": "WorldTour",
       "phase": "cobbled"
     },
     {
+      "date": "1-mrt",
       "name": "Kuurne-Brussel-Kuurne",
-      "date": "1 March 2026",
-      "type": "NonWorldTour",
+      "type": "NietWorldTour",
       "phase": "cobbled"
     },
     {
+      "date": "3-mrt",
+      "name": "Samyn Classic",
+      "type": "NietWorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "date": "7-mrt",
       "name": "Strade Bianche",
-      "date": "7 March 2026",
       "type": "WorldTour",
       "phase": "cobbled"
     },
     {
-      "name": "Le Samyn",
-      "date": "5 March 2026",
-      "type": "NonWorldTour",
-      "phase": "cobbled"
-    },
-    {
+      "date": "18-mrt",
       "name": "Nokere Koerse",
-      "date": "18 March 2026",
-      "type": "NonWorldTour",
+      "type": "NietWorldTour",
       "phase": "cobbled"
     },
     {
+      "date": "20-mrt",
       "name": "Bredene Koksijde Classic",
-      "date": "20 March 2026",
-      "type": "NonWorldTour",
+      "type": "NietWorldTour",
       "phase": "cobbled"
     },
     {
+      "date": "21-mrt",
       "name": "Milaan-San Remo",
-      "date": "21 March 2026",
       "type": "Monument",
       "phase": "cobbled"
     },
     {
-      "name": "Handzame Classic",
-      "date": "25 March 2026",
-      "type": "NonWorldTour",
-      "phase": "cobbled"
-    },
-    {
-      "name": "E3 Saxo Bank Classic",
-      "date": "27 March 2026",
+      "date": "25-mrt",
+      "name": "Ronde van Brugge",
       "type": "WorldTour",
       "phase": "cobbled"
     },
     {
-      "name": "Gent-Wevelgem",
-      "date": "29 March 2026",
+      "date": "27-mrt",
+      "name": "E3 Saxo Classic",
       "type": "WorldTour",
       "phase": "cobbled"
     },
     {
+      "date": "29-mrt",
+      "name": "In Flanders Fields",
+      "type": "WorldTour",
+      "phase": "cobbled"
+    },
+    {
+      "date": "1-apr",
       "name": "Dwars door Vlaanderen",
-      "date": "1 April 2026",
       "type": "WorldTour",
       "phase": "cobbled"
     },
     {
+      "date": "5-apr",
       "name": "Ronde van Vlaanderen",
-      "date": "5 April 2026",
       "type": "Monument",
       "phase": "cobbled"
     },
     {
+      "date": "8-apr",
       "name": "Scheldeprijs",
-      "date": "8 April 2026",
-      "type": "NonWorldTour",
+      "type": "NietWorldTour",
       "phase": "cobbled"
     },
     {
-      "name": "Paris-Roubaix",
-      "date": "12 April 2026",
+      "date": "12-apr",
+      "name": "Parijs-Roubaix",
       "type": "Monument",
       "phase": "cobbled"
     },
     {
-      "name": "Amstel Gold Race",
-      "date": "19 April 2026",
-      "type": "Monument",
+      "date": "15-apr",
+      "name": "Ronde van Limburg",
+      "type": "NietWorldTour",
       "phase": "ardennes"
     },
     {
-      "name": "Fleche Wallonne",
-      "date": "22 April 2026",
+      "date": "17-apr",
+      "name": "Brabantse Pijl",
+      "type": "NietWorldTour",
+      "phase": "ardennes"
+    },
+    {
+      "date": "19-apr",
+      "name": "Amstel Gold Race",
       "type": "WorldTour",
       "phase": "ardennes"
     },
     {
+      "date": "22-apr",
+      "name": "Waalse Pijl",
+      "type": "WorldTour",
+      "phase": "ardennes"
+    },
+    {
+      "date": "26-apr",
       "name": "Luik-Bastenaken-Luik",
-      "date": "26 April 2026",
       "type": "Monument",
       "phase": "ardennes"
     }
   ],
   "strategy": {
     "phases": {
-      "cobbled": "Omloop through Paris-Roubaix. Prioritise cobbled specialists: MVDP, Philipsen, Politt, Dewulf, Mohoric, Brennan. MVDP is primary kopman.",
-      "ardennes": "Amstel, Fleche, Liege. Pivot to climbers/puncheurs: Pogacar, Evenepoel, Hermans, Aranburu. Kopman switches to Pogacar or Evenepoel."
+      "cobbled": "Omloop through Parijs-Roubaix. Prioritise cobbled specialists. MVDP is primary kopman for Monument days.",
+      "ardennes": "Ronde van Limburg through Luik. Pivot to puncheurs/climbers. Pogacar or Evenepoel as kopman. NOTE: Amstel Gold Race is WorldTour (not Monument) — max 100pts for win."
     },
-    "transferWindow": "Main pivot after Paris-Roubaix (12 April). Release cobbled fillers, bring in Ardennes specialists.",
-    "fillerRiders": "Cheap riders (price 2-3) used to balance transfer budgets. Always bench them. Release at next window.",
-    "kopmanPrinciple": "Never waste kopman on a rider who won't finish top 6. Monument days with MVDP or Pogacar starting = automatic kopman choice."
+    "transferWindow": "Main pivot after Parijs-Roubaix (12 april). Release cobbled fillers, bring in Ardennes specialists.",
+    "kopmanPrinciple": "Monument + top favourite = kopman. A Monument win scores 125 + 30 kopman bonus = 155 points total. Never waste kopman on a rider unlikely to finish top 6.",
+    "teammatBonus": "10 bonus points for teammates of the winner — field as many riders from the likely winning team as possible on Monument days.",
+    "budgetNote": "Budget 120M total. Max 4 riders per team."
   },
   "allRiders": [
     {
