@@ -72,11 +72,11 @@ async function runResearcher(today) {
 Required JSON structure:
 {"races":[{"name":"...","date":"...","type":"Monument|WorldTour|NietWorldTour"}],"starters":{"race name":["Rider Name"]},"dns":{"race name":[{"name":"...","reason":"..."}]},"news":[{"headline":"...","detail":"...","source":"...","relevance":"..."}]}`;
 
-  const user = `Search for:
-1. Pro cycling races in the next 7 days (name, date, type)
-2. Startlists for races in next 2 days: search "[race] 2026 startlist"
-3. DNS/injury news for: ${coreRiders}
-4. Latest cycling news last 24h (min 3 items) from Sporza or WielerFlits
+  const user = `Search for MEN'S professional cycling only (ignore all women's races):
+1. Men's pro cycling races in the next 7 days (name, date, type)
+2. Startlists for men's races in next 2 days: search "[race] 2026 startlist"
+3. DNS/injury news for these riders, current 2026 season only (ignore previous seasons): ${coreRiders}
+4. Latest men's cycling news last 24h (min 3 items) from Sporza or WielerFlits — NO women's race results
 
 Return only the JSON object.`;
 
@@ -111,6 +111,11 @@ async function runWriter(today, research) {
   console.log("Agent 2 (Writer) starting...");
 
   const { allRiders, ...gamedataSlim } = gamedata;
+  // Compact rider list for transfer/watch suggestions (name + price only, skip price-2 fillers)
+  const riderPriceList = allRiders
+    .filter(r => r.price >= 3)
+    .map(r => `${r.name} (${r.price}M, ${r.team})`)
+    .join(", ");
   const nextTransferCost = Math.max(0, squad.transfersUsed - 2);
 
   const system = `You are a Sporza Wielermanager briefing writer for the 2026 spring classics season.
@@ -129,8 +134,13 @@ ${JSON.stringify(gamedataSlim.raceCalendar, null, 2)}
 ## Thomas's squad
 ${JSON.stringify(squad, null, 2)}
 
+## All available riders (price ≥ 3M, for Riders to Watch suggestions)
+${riderPriceList}
+
 ## Rules
 - ONLY recommend riders confirmed in the verified startlist. If not confirmed, bench them with a note.
+- CRITICAL: Only include injury/DNS info from the current 2026 season. Never reference injuries or news from previous seasons.
+- Only include MEN'S race news. Ignore all women's cycling results and news entirely.
 - Never invent news — only use items from research data.
 - Last names only. Direct and punchy.
 - Clean HTML only: <h2> headers, <ul><li> lists, <strong> emphasis. No markdown.
@@ -147,7 +157,8 @@ Write the daily briefing:
 3. <h2>Bench (8)</h2> — with DNS flags where relevant
 4. <h2>Kopman Pick</h2> — who, why, max bonus points possible
 5. <h2>Transfers</h2> — cost ${nextTransferCost}M for next transfer. Recommend action or hold.
-6. <h2>News & Gossip</h2> — from research only, with source`;
+6. <h2>Riders to Watch</h2> — 3-5 riders NOT in Thomas's squad who could score big in upcoming races. Include their price from the gamedata allRiders list and why they're interesting. Focus on value picks and potential race winners.
+7. <h2>News & Gossip</h2> — men's cycling only, from research data, with source`;
 
   const html = await callClaude({
     system,
