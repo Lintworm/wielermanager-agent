@@ -1,0 +1,34 @@
+name: Daily Wielermanager Briefing
+
+on:
+  schedule:
+    # 7:00 UTC = 8:00 Brussels (CET) / 9:00 Brussels (CEST in summer)
+    # Switch to 6:00 UTC in summer (late March–October) for 8AM CEST
+    - cron: '0 6 * * *'
+  workflow_dispatch: # allows manual trigger from GitHub UI for testing
+
+jobs:
+  send-briefing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          INBOUND_EMAIL: ${{ secrets.INBOUND_EMAIL }}
+        run: node agent.js
