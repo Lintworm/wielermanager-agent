@@ -40,7 +40,7 @@ Write a daily briefing with these sections:
 6. **Watchlist - who to monitor during upcoming races that is for now not yet in Thomas' team.
 7. **Gossip & news** — 3-5 bullet points of relevant cycling news that can impact wielermanager performance (injuries, form, DNS rumors, team drama). Use web search to find the latest.
 
-Be direct and punchy. No fluff. Use rider last names only (except to disambiguate). Flag DNS risks clearly. Format as clean HTML for an email.`;
+Be direct and punchy. No fluff. Use rider last names only (except to disambiguate). Flag DNS risks clearly. Format your response as clean HTML only. Use <h2> for section headers, <ul><li> for lists, <strong> for emphasis. Do not use markdown, asterisks, or # symbols anywhere. Return only the inner HTML content, no <html> or <body> tags.`;
 
   const userMessage = `Today is ${today}. Fetch the latest cycling news and race schedule, then write the daily Wielermanager briefing for Thomas.`;
 
